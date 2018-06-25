@@ -57,7 +57,7 @@ function sameCellWidth(){
   var target = document.getElementById('symbol').value;
   var pos = 0;
   var space = "";
-  var cellWidth = document.getElementById('sameCell').innerHTML;
+  var cellWidth = document.getElementById('sameCell').value;
   if (/^\d+$/ .test(cellWidth) === false){
     document.getElementById('alert').innerHTML = "Введи числовое значение";
     return;
