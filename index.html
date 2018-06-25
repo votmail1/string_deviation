@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+  <head>
+    <title></title>
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="content">
+        <form >
+          <br/><br/>
+          Общая строка (пример: 1Ф1  |  1Ф1  |  1Ф1  |  П-L1  |  П-L2  |):
+          <textarea id='text' onkeydown = "if (event.keyCode == 13)document.getElementById('change').click()" style='height:300px'></textarea>
+          <br/><br/>
+          Выровнять ячейки по <textarea id='sameCell'  style='width:5%; height:20px'></textarea> символов<br/>
+          <div id="alert" style = "color:red;"></div>
+          <br/>
+          <input type='button'  onclick='sameCellWidth()' value = 'Выровнять'>
+          <br/><br/>
+          Префикс:
+          <br/>
+          <textarea id='prefix'  style='width:20%; height:20px'></textarea><br/>
+          <br/>
+          Символ для разбивки:
+          <br/>
+          <input type ='text' id='symbol'  style='width:20%; height:20px' value = "|"></input><br/>
+          <br/>
+          Символов в новой строке:
+          <br/>
+          <input type ='text' onkeydown = "if (event.keyCode == 13){sortToLines();return false;}" id='symbolsInStr'  style='width:20%; height:tagsCorrectionpx' value=236 >
+          <br/><br/>
+          <input type='button' id='change' onclick='sortToLines()' value = 'Разбить на строки'>
+          <br/>
+          <br/>
+        </form>
+        <form id='text1'></form>  
+      </div>
+      <div class="footer" id = 'footer'>
+      </div>
+    </div>      
+  </body>
+</html>
+<script src='js/functions.js'></script>
+
