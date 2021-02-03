@@ -32,10 +32,8 @@ function sortToLines (){
       if (breakPoint[i] === 0) {
         arr[i] = textAreaFirst.substring(breakPoint[i-1],textAreaFirst.length);
         break;
-      }
-      
+      }      
     }
-    
   }
   for (var i = 1; i < arr.length; i++){
     if (arr[i][0] === "|")  newHTML += (i) + '<textarea>' + prefix + '_' + (i)  + arr[i] + '</textarea>';
@@ -56,23 +54,26 @@ function sameCellWidth(){
   var newString = "";
   var target = document.getElementById('symbol').value;
   var pos = 0;
-  var space = "";
+  var space = " ";
   var cellWidth = document.getElementById('sameCell').value;
   if (/^\d+$/ .test(cellWidth) === false){
     document.getElementById('alert').innerHTML = "Введи числовое значение";
     return;
   }
+
   document.getElementById('alert').innerHTML = " ";
+
   while (true) {
     var foundPos = str.indexOf(target, pos);
     if (foundPos == -1) break;
     if ((cellWidth > (foundPos-pos)) && (foundPos != 0)){
     var newSpaces = (cellWidth - (foundPos-pos)) / 2;
-    for (var i = 0; i < newSpaces; i++){
+
+     for (var i = 0; i < newSpaces; i++){
       space += " ";
     }
-    newString +=  space + str.substring((pos),foundPos) + space + target;
-    space = "";
+     newString +=  space + str.substring((pos),foundPos) + space + target;
+     space = "";
     }
     else{
     newString += str.substring((pos),foundPos) + target;
@@ -81,6 +82,7 @@ function sameCellWidth(){
       newString = target + newString;
     }
     pos = foundPos + 1;    
+
   }
   document.getElementById('text').value = newString;
 }
